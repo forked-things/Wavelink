@@ -190,3 +190,6 @@ class Node:
     async def _send(self, **data):
         __log__.debug(f'NODE | Sending payload:: <{data}> ({self.__repr__()})')
         await self._websocket._send(**data)
+
+    async def ping(self):
+        await self._send()
